@@ -86,7 +86,7 @@ TEST(test_vector, test_reserve_3) {
 
 TEST(test_vector, test_resize_1) {
   std::vector<int> range{1, 2, 3, 4, 5, 6, 7, 8, 9, 10};
-  vector a{range.begin(), range.end()};
+  vector           a{range.begin(), range.end()};
   range.resize(5);
   vector b{range.begin(), range.end()};
   a.resize(5);
@@ -95,7 +95,7 @@ TEST(test_vector, test_resize_1) {
 
 TEST(test_vector, test_resize_2) {
   std::vector<int> range{1, 2, 3, 4, 5};
-  vector a{range.begin(), range.end()};
+  vector           a{range.begin(), range.end()};
   range.resize(8);
   vector b{range.begin(), range.end()};
   a.resize(8);
@@ -167,7 +167,7 @@ TEST(test_vector, test_strings_1) {
 
   EXPECT_EQ(a.size(), 10);
 
-  for (const auto &v: a | ranges::views::slice(6, ranges::end)) {
+  for (const auto &v : a | ranges::views::slice(6, ranges::end)) {
     EXPECT_EQ(v, "World!");
   }
 }
@@ -217,7 +217,7 @@ TEST(test_vector, test_vec_uptr_vec) {
 }
 
 TEST(test_vector, range_constructor) {
-  auto iota_range = ranges::views::iota(0, 1000);
+  auto   iota_range = ranges::views::iota(0, 1000);
   vector a{iota_range.begin(), iota_range.end()};
 
   EXPECT_TRUE(ranges::equal(a, iota_range));

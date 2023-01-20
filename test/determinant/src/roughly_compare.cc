@@ -8,13 +8,13 @@
  * ----------------------------------------------------------------------------
  */
 
+#include <fstream>
 #include <iostream>
 #include <set>
 #include <string>
-#include <fstream>
 
-#include "utility.hpp"
 #include "equal.hpp"
+#include "utility.hpp"
 
 #include <boost/program_options.hpp>
 #include <boost/program_options/option.hpp>
@@ -24,7 +24,7 @@ bool contain_same(std::string name_a, std::string name_b) {
   std::ifstream file_a, file_b;
   file_a.open(name_a);
   file_b.open(name_b);
-  
+
   if (!file_a.is_open()) {
     std::cout << "Can't open " << name_a << " \n";
     return false;
@@ -75,9 +75,9 @@ int main(int argc, char *argv[]) {
       std::cout << "More than 2 files to compare\n";
       return 1;
     }
-    return (contain_same(input_files[0], input_files[1]) ? 0 : 1);  
-  } 
-  
+    return (contain_same(input_files[0], input_files[1]) ? 0 : 1);
+  }
+
   else {
     std::cout << "Nothing to do\n";
     return 1;

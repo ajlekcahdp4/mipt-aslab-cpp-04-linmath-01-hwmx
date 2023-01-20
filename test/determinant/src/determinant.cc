@@ -13,9 +13,9 @@
 #include <optional>
 #include <string>
 
+#include <boost/lexical_cast.hpp>
 #include <boost/program_options.hpp>
 #include <boost/program_options/option.hpp>
-#include <boost/lexical_cast.hpp>
 
 namespace po = boost::program_options;
 
@@ -52,7 +52,7 @@ template <typename T> bool main_loop_determinant(unsigned n, bool measure = fals
 int main(int argc, char *argv[]) {
   bool measure = false;
 
-  std::string opt;
+  std::string             opt;
   po::options_description desc("Available options");
   desc.add_options()("help,h", "Print this help message")("measure,m", "Print perfomance metrics")(
       "type,t", po::value<std::string>(&opt)->default_value("double"),
